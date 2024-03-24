@@ -37,10 +37,10 @@ public class BadProductService {
     public BadProductResponse editBadProduct(Long id, BadProductRequest request) {
         BadProduct entity = repository.findById(id).orElseThrow(() -> new RuntimeException("BadProduct not found"));
         if (entity != null) {
-            entity.setName(request.getName());
-            entity.setDefectType(request.getDefectType());
-            entity.setQuantity(request.getQuantity());
-            entity.setDateField(request.getDateField());
+            entity.setName(request.getName() != null ? request.getName() : entity.getName());
+            entity.setDefectType(request.getDefectType() != null ? request.getDefectType() : entity.getDefectType());
+            entity.setQuantity(request.getQuantity() != null ? request.getQuantity() : entity.getQuantity());
+            entity.setDateField(request.getDateField() != null ? request.getDateField() : entity.getDateField());
             repository.save(entity);
         }
         return BadProductMapper.mapToDto(BadProductMapper.mapToModel(entity));
