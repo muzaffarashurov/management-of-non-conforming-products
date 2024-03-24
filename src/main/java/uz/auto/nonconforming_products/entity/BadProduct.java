@@ -3,7 +3,7 @@ package uz.auto.nonconforming_products.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "bad_products")
-public class BadProducts {
+@Table(name = "bad_product")
+public class BadProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -28,10 +28,10 @@ public class BadProducts {
     private Integer quantity;
 
     @Column(name = "date_field", nullable = false)
-    private LocalDate dateField;
+    private LocalDateTime dateField;
 
     @PrePersist
     protected void onCreate() {
-        dateField = LocalDate.now();
+        dateField = LocalDateTime.now();
     }
 }
