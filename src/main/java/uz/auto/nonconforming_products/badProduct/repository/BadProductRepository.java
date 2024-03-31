@@ -1,8 +1,8 @@
-package uz.auto.nonconforming_products.repository;
+package uz.auto.nonconforming_products.badProduct.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import uz.auto.nonconforming_products.entity.BadProduct;
+import uz.auto.nonconforming_products.badProduct.entity.BadProduct;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package uz.auto.nonconforming_products.entity;
+package uz.auto.nonconforming_products.badProduct.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

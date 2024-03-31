@@ -1,20 +1,20 @@
-package uz.auto.nonconforming_products.rest.controller;
+package uz.auto.nonconforming_products.badProduct.rest.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import uz.auto.nonconforming_products.mapper.BadProductMapper;
-import uz.auto.nonconforming_products.rest.dto.BadProductRequest;
-import uz.auto.nonconforming_products.rest.dto.BadProductResponse;
-import uz.auto.nonconforming_products.service.BadProductService;
+import uz.auto.nonconforming_products.badProduct.mapper.BadProductMapper;
+import uz.auto.nonconforming_products.badProduct.rest.dto.BadProductRequest;
+import uz.auto.nonconforming_products.badProduct.rest.dto.BadProductResponse;
+import uz.auto.nonconforming_products.badProduct.service.BadProductService;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/products")
+@RequestMapping("/api/products")
 public class BadProductController {
 
     private final BadProductService service;

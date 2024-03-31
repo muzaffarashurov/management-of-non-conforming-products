@@ -1,4 +1,4 @@
-package uz.auto.nonconforming_products.model;
+package uz.auto.nonconforming_products.badProduct.model;
 
 import lombok.Builder;
 import lombok.Getter;

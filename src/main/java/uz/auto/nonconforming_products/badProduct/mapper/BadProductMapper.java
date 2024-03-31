@@ -1,9 +1,9 @@
-package uz.auto.nonconforming_products.mapper;
+package uz.auto.nonconforming_products.badProduct.mapper;
 
-import uz.auto.nonconforming_products.entity.BadProduct;
-import uz.auto.nonconforming_products.model.BadProductModel;
-import uz.auto.nonconforming_products.rest.dto.BadProductRequest;
-import uz.auto.nonconforming_products.rest.dto.BadProductResponse;
+import uz.auto.nonconforming_products.badProduct.entity.BadProduct;
+import uz.auto.nonconforming_products.badProduct.model.BadProductModel;
+import uz.auto.nonconforming_products.badProduct.rest.dto.BadProductRequest;
+import uz.auto.nonconforming_products.badProduct.rest.dto.BadProductResponse;
 
 public class BadProductMapper {
     public static BadProductResponse mapToDto(BadProductModel model) {

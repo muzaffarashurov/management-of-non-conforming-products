@@ -1,4 +1,4 @@
-package uz.auto.nonconforming_products.rest.dto;
+package uz.auto.nonconforming_products.badProduct.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;

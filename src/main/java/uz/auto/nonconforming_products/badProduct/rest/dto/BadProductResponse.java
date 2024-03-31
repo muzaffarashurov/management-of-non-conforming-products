@@ -1,4 +1,4 @@
-package uz.auto.nonconforming_products.rest.dto;
+package uz.auto.nonconforming_products.badProduct.rest.dto;
 
 import lombok.Builder;
 import lombok.Getter;
