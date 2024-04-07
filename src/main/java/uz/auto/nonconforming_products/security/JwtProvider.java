@@ -21,18 +21,18 @@ public class JwtProvider {
 
     private static final SecretKey key = HS512.key().build();
 
-    public String generateJwtToken(Authentication authentication) {
-        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+public String generateJwtToken(Authentication authentication) {
+    UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
-        return Jwts.builder()
-                .setSubject(userPrincipal.getUsername())
-                .claim("userId", userPrincipal.getId())
-                .claim("userRoles", userPrincipal.getAuthorities())
-                .setIssuedAt(new Date())
-                .setExpiration(DateUtils.addHours(new Date(), 2))
-                .signWith(key, HS512)
-                .compact();
-    }
+    return Jwts.builder()
+            .setSubject(userPrincipal.getUsername())
+            .claim("userId", userPrincipal.getId())
+            .claim("userRoles", userPrincipal.getAuthorities())
+            .setIssuedAt(new Date())
+            .setExpiration(DateUtils.addHours(new Date(), 2))
+            .signWith(key, HS512)
+            .compact();
+}
 
     public boolean validateJwtToken(String authToken) {
         try {
