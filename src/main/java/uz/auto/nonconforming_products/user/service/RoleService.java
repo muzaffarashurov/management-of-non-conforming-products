@@ -9,9 +9,11 @@ import uz.auto.nonconforming_products.user.repository.RoleRepository;
 @Service
 @RequiredArgsConstructor
 public class RoleService {
+
     private final RoleRepository roleRepository;
 
     public Role findByName(RoleName roleName) {
-        return roleRepository.findByName(roleName).orElseThrow(() -> new RuntimeException("No role found by name " + roleName.name()));
+        return roleRepository.findByName(roleName)
+                .orElseThrow(() -> new RuntimeException("No role found by name " + roleName.name()));
     }
 }

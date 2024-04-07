@@ -14,9 +14,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserService userService;
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        var user = userService.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User or password incorrect"));
+
+        var user = userService.findByEmail(username)
+                .orElseThrow(()->new UsernameNotFoundException("User or password incorrect"));
+
         return UserPrincipal.build(user);
     }
 }

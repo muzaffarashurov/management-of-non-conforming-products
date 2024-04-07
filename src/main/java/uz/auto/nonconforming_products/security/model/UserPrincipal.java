@@ -27,9 +27,11 @@ public class UserPrincipal implements UserDetails {
     private Collection authorities;
 
     public static UserPrincipal build(User user) {
+
         List<SimpleGrantedAuthority> authorities = user.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName().name()))
-                .toList();
+                .map(role ->
+                        new SimpleGrantedAuthority(role.getName().name())
+                ).toList();
 
         return UserPrincipal.builder()
                 .id(user.getId())
@@ -77,10 +79,11 @@ public class UserPrincipal implements UserDetails {
         return true;
     }
 
-    public boolean isAdmin() {
+    public boolean isAdmin(){
         return isAdmin;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
